@@ -7,7 +7,7 @@ module VagrantPlugins
             class Base
 
                 def snapshot_take
-                    execute("snapshot", @uuid, "take", "vagrant-snap", "--pause")
+                    execute("snapshot", @uuid, "take", "vagrant-snap-#{Time.now.to_i}", "--pause")
                 end
 
                 def snapshot_rollback(bootmode)
