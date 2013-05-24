@@ -3,6 +3,12 @@ require 'vagrant'
 module VagrantSnap
     class Plugin < Vagrant.plugin("2")
 
+        require_relative "command/root"
+        require_relative "providers/virtualbox/action"
+        require_relative "providers/virtualbox/driver/base"
+        require_relative "providers/vmware_fusion/action"
+        require_relative "providers/vmware_fusion/driver/base"
+
         name "snap command"
 
         description <<-DESC
@@ -12,11 +18,6 @@ module VagrantSnap
 
         command("snap") do
             setup_i18n
-            require_relative "command/root"
-            require_relative "providers/virtualbox/action"
-            require_relative "providers/virtualbox/driver/base"
-            require_relative "providers/vmware_fusion/action"
-            require_relative "providers/vmware_fusion/driver/base"
             Command::Root
         end
 
