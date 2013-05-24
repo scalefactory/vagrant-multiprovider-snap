@@ -12,7 +12,12 @@ module VagrantPlugins
 
                 def call(env)
 
+                    env[:ui].info I18n.t("vagrant_snap.actions.vm.snapshot_rollback.rolling_back")
+
+                    # Snapshot rollback involves powering off and on the VM
+                    #  so we need to find the gui state
                     boot_mode = env[:machine].provider_config.gui ? "gui" : "headless"
+
                     env[:machine].provider.driver.snapshot_rollback(boot_mode)
 
                     @app.call(env)

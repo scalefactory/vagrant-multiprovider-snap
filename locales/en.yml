@@ -1,0 +1,12 @@
+en:
+  vagrant_snap:
+    actions:
+      vm:
+        snapshot_take:
+          taking: |-
+            Taking snapshot.
+        snapshot_rollback:
+          rolling_back: |-
+            Rolling back to previous snapshot
+
+      
