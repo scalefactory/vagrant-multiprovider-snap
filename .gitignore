@@ -3,3 +3,6 @@
 Gemfile.lock
 pkg/*
 .vagrant
+help/
+license-vagrant-vmware-fusion.lic
+vendor/
