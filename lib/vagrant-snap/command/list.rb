@@ -24,9 +24,18 @@ module VagrantSnap
                 with_target_vms(argv) do |machine|
 
                     results << "#{machine.name.to_s}"
-                    machine.provider.driver.snapshot_list.each do |snap|
-                        results << "  #{snap}"
+
+                    snaps = machine.provider.driver.snapshot_list
+
+                    if snaps.length == 0
+                        results << "  (none)"
+                    else
+                        snaps.each do |snap|
+                            results << "  + #{snap}"
+                        end
                     end
+
+                    results << "\n"
 
                 end
 

@@ -19,7 +19,7 @@ module VagrantPlugins
 
                 def snapshot_list
                     # XXX blows up if no snapshots on the VM - how to prevent this?
-                    info = execute("snapshot", @uuid, "list", "--machinereadable")
+                    info = execute("showvminfo", @uuid, "--machinereadable")
                     snapshots = []
                     info.split("\n").each do |line|
                         if line =~ /^SnapshotName="(.+?)"$/
