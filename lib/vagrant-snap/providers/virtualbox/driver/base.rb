@@ -13,9 +13,20 @@ module VagrantPlugins
                 def snapshot_rollback(bootmode)
                     halt
                     sleep 2 # race condition on locked VMs otherwise?
-                    execute("snapshot",  @uuid, "restorecurrent")
+                    execute("snapshot",  @uuid, "restore", snapshot_list.first)
                     start(bootmode)
+                end
 
+                def snapshot_list
+                    # XXX blows up if no snapshots on the VM - how to prevent this?
+                    info = execute("snapshot", @uuid, "list", "--machinereadable")
+                    snapshots = []
+                    info.split("\n").each do |line|
+                        if line =~ /^SnapshotName="(.+?)"$/
+                            snapshots << $1.to_s
+                        end
+                    end
+                    snapshots
                 end
 
             end

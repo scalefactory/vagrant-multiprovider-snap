@@ -1,5 +1,12 @@
 en:
   vagrant_snap:
+    commands:
+      list:
+        output: |-
+          Current available snapshots by VM:
+
+          %{snapshots}
+
     actions:
       vm:
         snapshot_take:

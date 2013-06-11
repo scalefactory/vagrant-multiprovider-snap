@@ -24,6 +24,12 @@ module VagrantSnap
                     Rollback
                 end
 
+                @subcommands.register(:list) do
+                    require_relative "list"
+                    List
+                end
+
+
             end
 
             def execute
