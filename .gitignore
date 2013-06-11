@@ -3,7 +3,7 @@
 Gemfile.lock
 pkg/*
 .vagrant
-help/
+help/*
 license-vagrant-vmware-fusion.lic
-vendor/
+vendor/*
 *.swp
