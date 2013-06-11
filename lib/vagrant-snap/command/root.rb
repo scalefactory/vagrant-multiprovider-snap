@@ -41,7 +41,23 @@ module VagrantSnap
             end
 
             def help
-                puts "TODO"
+                opts = OptionParser.new do |opts|
+                    opts.banner = 'Usage: vagrant snap <command> [<args>]'
+                    opts.separator ""
+                    opts.separator "Available subcommands:"
+
+                    keys = []
+                    @subcommands.each { |key, value| keys << key.to_s }
+
+                    keys.sort.each do |key|
+                        opts.separator "     #{key}"
+                    end
+
+                    opts.separator ""
+                    opts.separator "For help on any individual command run 'vagrant snap COMMAND -h'"
+                end
+
+                @env.ui.info(opts.help, :prefix => false)
             end
 
         end
