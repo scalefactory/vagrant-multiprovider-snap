@@ -6,3 +6,4 @@ pkg/*
 help/
 license-vagrant-vmware-fusion.lic
 vendor/
+*.swp
