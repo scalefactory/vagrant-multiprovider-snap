@@ -11,11 +11,11 @@ module HashiCorp
                 end
 
                 def snapshot_rollback(bootmode)
-                   vmrun("revertToSnapshot", "#{vmx_path}", list_snapshots.first)
+                   vmrun("revertToSnapshot", "#{vmx_path}", snapshot_list.first)
                    start
                 end
 
-                def list_snapshots
+                def snapshot_list
                     snapshots = []
                     vmrun("listSnapshots", "#{vmx_path}").stdout.split("\n").each do |line|
                         if line =~ /^vagrant-snap-/
