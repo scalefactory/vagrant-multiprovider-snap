@@ -1,5 +1,5 @@
 Vagrant.require_plugin "vagrant-vmware-fusion"
-Vagrant.require_plugin "vagrant-snap"
+Vagrant.require_plugin "vagrant-multiprovider-snap"
 
 Vagrant.configure("2") do |config|
 

@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "vagrant-snap/version"
+require "vagrant-multiprovider-snap/version"
 
 Gem::Specification.new do |s|
   s.name        = "vagrant-snap"

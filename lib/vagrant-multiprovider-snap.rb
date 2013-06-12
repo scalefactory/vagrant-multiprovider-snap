@@ -1,5 +1,5 @@
-require "vagrant-snap/version"
-require "vagrant-snap/plugin"
+require "vagrant-multiprovider-snap/version"
+require "vagrant-multiprovider-snap/plugin"
 
 module VagrantSnap
    def self.source_root
