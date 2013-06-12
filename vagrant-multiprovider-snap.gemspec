@@ -3,17 +3,17 @@ $:.push File.expand_path("../lib", __FILE__)
 require "vagrant-multiprovider-snap/version"
 
 Gem::Specification.new do |s|
-  s.name        = "vagrant-snap"
+  s.name        = "vagrant-zz-multiprovider-snap"
   s.version     = Vagrant::Snap::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jon Topper"]
   s.email       = ["jon@scalefactory.com"]
-  s.homepage    = "http://github.com/scalefactory/vagrant-snap"
+  s.homepage    = "http://github.com/scalefactory/vagrant-multiprovider-snap"
 
   s.summary     = %q{Multi-provider snapshots for Vagrant}
   s.description = %q{Multi-provider snapshots for Vagrant}
 
-  s.rubyforge_project = "vagrant-snap"
+  s.rubyforge_project = "vagrant-multiprovider-snap"
 
   files = `git ls-files`.split("\n")
   ignore = %w{rgloader/* Gemfile Rakefile Vagrantfile .gitignore}
