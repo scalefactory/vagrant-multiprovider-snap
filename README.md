@@ -61,7 +61,7 @@ running - although it's a bundler environment, you'll also need a packaged
 Vagrant install in order to get access to the rgloader libraries.
 
 ```
-git@github.com:scalefactory/vagrant-multiprovider-snap.git
+git clone git@github.com:scalefactory/vagrant-multiprovider-snap.git
 cd vagrant-multiprovider-snap
 cp ~/.vagrant.d/license-vagrant-vmware-fusion.lic .
 bundle install
@@ -76,3 +76,7 @@ Once you've made changes that you're happy with, I'd recommend using
 Vagrant install since some things which work in the bundler environment might
 not work as expected in the packaged copy due to differences in how the plugins
 are handled.
+
+License
+-------
+vagrant-multiprovider-snap is licensed under the MIT license.
