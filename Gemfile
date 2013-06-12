@@ -7,9 +7,20 @@ unless File.exist?( File.join( File.dirname(__FILE__), 'license-vagrant-vmware-f
     exit -1
 end
 
-# This probably needs to change if you're not on a Mac, or
-# if you've installed the vagrant distribution somewhere else
-ENV["VAGRANT_INSTALLER_EMBEDDED_DIR"] = '/Applications/Vagrant/embedded/'
+embedded_locations = %w{/Applications/Vagrant/embedded /opt/vagrant/embedded}
+
+embedded_locations.each do |p|
+    ENV["VAGRANT_INSTALLER_EMBEDDED_DIR"] = p if File.directory?(p)
+end
+
+unless ENV.has_key?('VAGRANT_INSTALLER_EMBEDDED_DIR')
+    $stderr.puts "Couldn't find a packaged install of vagrant, and we need this"
+    $stderr.puts "in order to make use of the RubyEncoder libraries."
+    $stderr.puts "I looked in:"
+    embedded_locations.each do |p|
+        $stderr.puts "  #{p}"
+    end
+end
 
 # Specify your gem's dependencies in vagrant-snap.gemspec
 gemspec
