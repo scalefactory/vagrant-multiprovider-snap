@@ -1,4 +1,4 @@
-Vagrant Multi-Provder Snap
+Vagrant Multi-Provider Snap
 ==========================
 
 Description
