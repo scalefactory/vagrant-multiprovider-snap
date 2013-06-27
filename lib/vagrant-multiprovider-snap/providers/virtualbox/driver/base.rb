@@ -21,11 +21,15 @@ module VagrantPlugins
                     info = execute("showvminfo", @uuid, "--machinereadable")
                     snapshots = []
                     info.split("\n").each do |line|
-                        if line =~ /^SnapshotName="(.+?)"$/
+                        if line =~ /^SnapshotName="(vagrant-snap-.+?)"$/
                             snapshots << $1.to_s
                         end
                     end
                     snapshots
+                end
+
+                def has_snapshot?
+                    snapshot_list.length > 0
                 end
 
             end
