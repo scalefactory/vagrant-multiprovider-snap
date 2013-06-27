@@ -25,6 +25,10 @@ module HashiCorp
                     snapshots.sort
                 end
 
+                def has_snapshot?
+                    snapshot_list.length > 0
+                end
+
             end
 
         end
