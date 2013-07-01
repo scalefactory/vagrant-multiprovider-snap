@@ -1,3 +1,8 @@
+## 0.0.3 (July 1, 2013)
+
+ - Adds snapshot methods to VirtualBox::Driver::Meta for use outside of
+   the plugin
+
 ## 0.0.2 (June 27, 2013)
 
  - Adds has_snapshot? method to drivers
