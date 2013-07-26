@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "vagrant-multiprovider-snap/version"
 
 Gem::Specification.new do |s|
-  s.name        = "vagrant-zz-multiprovider-snap"
+  s.name        = "vagrant-multiprovider-snap"
   s.version     = Vagrant::Snap::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jon Topper"]

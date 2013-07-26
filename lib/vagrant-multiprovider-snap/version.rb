@@ -1,5 +1,5 @@
 module Vagrant
   module Snap
-    VERSION = "0.0.3"
+    VERSION = "0.0.4"
   end
 end

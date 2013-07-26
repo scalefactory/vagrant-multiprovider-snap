@@ -1,3 +1,8 @@
+## 0.0.4 (July 26, 2013)
+
+ - Handle ordering of plugin dependencies better - deprecate the 'zz' name component.
+ - Tested working with latest vagrant (1.2.5) and vmware fusion plugin (0.8.3)
+
 ## 0.0.3 (July 1, 2013)
 
  - Adds snapshot methods to VirtualBox::Driver::Meta for use outside of

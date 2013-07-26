@@ -17,12 +17,8 @@ Installation
 The easiest way to install this plugin is via the published gem.
 
 ```
-vagrant plugin install vagrant-zz-multiprovider-snap
+vagrant plugin install vagrant-multiprovider-snap
 ```
-
-(The 'zz' in the gem name is a workaround for a bug in Vagrant plugin loading
-which prevents the mixins in this module from working correctly - we need to
-force this plugin to be loaded after the vmware plugin otherwise this fails)
 
 
 Usage
