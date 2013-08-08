@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Jon Topper"]
   s.email       = ["jon@scalefactory.com"]
   s.homepage    = "http://github.com/scalefactory/vagrant-multiprovider-snap"
+  s.license     = 'MIT'
 
   s.summary     = %q{Multi-provider snapshots for Vagrant}
   s.description = %q{Multi-provider snapshots for Vagrant}
