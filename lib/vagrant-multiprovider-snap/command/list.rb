@@ -23,6 +23,8 @@ module VagrantSnap
 
                 with_target_vms(argv) do |machine|
 
+                    next if machine.state.id == :not_created
+
                     results << "#{machine.name.to_s}"
 
                     snaps = machine.provider.driver.snapshot_list
