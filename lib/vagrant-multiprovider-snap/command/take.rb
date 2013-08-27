@@ -21,8 +21,6 @@ module VagrantSnap
 
                 with_target_vms(argv) do |vm|
 
-                    next if vm.state.id == :not_created
-
                     vm.action(:snapshot_take)
 
                 end
