@@ -1,3 +1,7 @@
+## 0.0.5 (August 30, 2013)
+
+ - Fixed error when listing snapshots from un-created VMs
+
 ## 0.0.4 (July 26, 2013)
 
  - Handle ordering of plugin dependencies better - deprecate the 'zz' name component.
