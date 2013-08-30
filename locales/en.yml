@@ -3,7 +3,7 @@ en:
     commands:
       list:
         output: |-
-          Current available snapshots by VM:
+          Current available snapshots by created VM:
 
           %{snapshots}
 
