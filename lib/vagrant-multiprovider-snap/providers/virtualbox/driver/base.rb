@@ -11,8 +11,10 @@ module VagrantPlugins
                 end
 
                 def snapshot_rollback(bootmode)
-                    halt
-                    sleep 2 # race condition on locked VMs otherwise?
+                    if read_state != :poweroff # don't try to power off if we're already off
+                        halt
+                        sleep 2 # race condition on locked VMs otherwise?
+                    end
                     execute("snapshot",  @uuid, "restore", snapshot_list.first)
                     start(bootmode)
                 end
