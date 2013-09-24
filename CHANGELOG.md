@@ -1,3 +1,7 @@
+## 0.0.6 (September 24, 2013)
+
+ - Fixed bug preventing rollback on halted Virtualbox VMs.
+
 ## 0.0.5 (August 30, 2013)
 
  - Fixed error when listing snapshots from un-created VMs
