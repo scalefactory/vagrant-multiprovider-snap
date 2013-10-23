@@ -1,3 +1,7 @@
+## 0.0.7 (October 23, 2013)
+
+ - Fixed bug preventing rollback on aborted VirtualBox VMs.
+
 ## 0.0.6 (September 24, 2013)
 
  - Fixed bug preventing rollback on halted Virtualbox VMs.
