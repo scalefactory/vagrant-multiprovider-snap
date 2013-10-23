@@ -11,7 +11,8 @@ module VagrantPlugins
                 end
 
                 def snapshot_rollback(bootmode)
-                    if read_state != :poweroff # don't try to power off if we're already off
+                    # don't try to power off if we're already off
+                    unless [:poweroff, :aborted].include?(read_state)
                         halt
                         sleep 2 # race condition on locked VMs otherwise?
                     end
