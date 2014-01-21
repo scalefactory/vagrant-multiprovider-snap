@@ -16,7 +16,7 @@ module VagrantPlugins
                         halt
                         sleep 2 # race condition on locked VMs otherwise?
                     end
-                    execute("snapshot",  @uuid, "restore", snapshot_list.first)
+                    execute("snapshot",  @uuid, "restore", snapshot_list.last)
                     start(bootmode)
                 end
 
@@ -24,11 +24,11 @@ module VagrantPlugins
                     info = execute("showvminfo", @uuid, "--machinereadable")
                     snapshots = []
                     info.split("\n").each do |line|
-                        if line =~ /^SnapshotName="(vagrant-snap-.+?)"$/
+                        if line =~ /^SnapshotName[^=]*="(vagrant-snap-.+?)"$/
                             snapshots << $1.to_s
                         end
                     end
-                    snapshots
+                    snapshots.sort
                 end
 
                 def has_snapshot?

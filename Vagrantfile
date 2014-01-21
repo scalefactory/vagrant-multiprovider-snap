@@ -1,4 +1,4 @@
-Vagrant.require_plugin "vagrant-multiprovider-snap" 
+require "vagrant-multiprovider-snap" 
 
 Vagrant.configure("2") do |config|
 
