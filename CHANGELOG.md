@@ -1,3 +1,7 @@
+## 0.0.8 (January 21, 2014)
+
+ - Fixed bug in handling of multiple snapshots on both providers.
+
 ## 0.0.7 (October 23, 2013)
 
  - Fixed bug preventing rollback on aborted VirtualBox VMs.
