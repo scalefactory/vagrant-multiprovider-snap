@@ -76,3 +76,13 @@ are handled.
 License
 -------
 vagrant-multiprovider-snap is licensed under the MIT license.
+
+
+Thanks
+------
+
+Many thanks to the following people for contributing to vagrant-multiprovider-snap:
+
+ - Reid Vandewiele
+ - James Sweeny
+ - Steven De Coeyer

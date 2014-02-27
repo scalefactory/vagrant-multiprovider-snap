@@ -11,9 +11,12 @@ module VagrantPlugins
                 end
 
                 def snapshot_rollback(bootmode)
-                    halt
-                    sleep 2 # race condition on locked VMs otherwise?
-                    execute("snapshot",  @uuid, "restore", snapshot_list.first)
+                    # don't try to power off if we're already off
+                    unless [:poweroff, :aborted].include?(read_state)
+                        halt
+                        sleep 2 # race condition on locked VMs otherwise?
+                    end
+                    execute("snapshot",  @uuid, "restore", snapshot_list.last)
                     start(bootmode)
                 end
 
@@ -21,11 +24,11 @@ module VagrantPlugins
                     info = execute("showvminfo", @uuid, "--machinereadable")
                     snapshots = []
                     info.split("\n").each do |line|
-                        if line =~ /^SnapshotName="(vagrant-snap-.+?)"$/
+                        if line =~ /^SnapshotName[^=]*="(vagrant-snap-.+?)"$/
                             snapshots << $1.to_s
                         end
                     end
-                    snapshots
+                    snapshots.sort
                 end
 
                 def has_snapshot?

@@ -1,3 +1,19 @@
+## 0.0.8 (January 21, 2014)
+
+ - Fixed bug in handling of multiple snapshots on both providers.
+
+## 0.0.7 (October 23, 2013)
+
+ - Fixed bug preventing rollback on aborted VirtualBox VMs.
+
+## 0.0.6 (September 24, 2013)
+
+ - Fixed bug preventing rollback on halted Virtualbox VMs.
+
+## 0.0.5 (August 30, 2013)
+
+ - Fixed error when listing snapshots from un-created VMs
+
 ## 0.0.4 (July 26, 2013)
 
  - Handle ordering of plugin dependencies better - deprecate the 'zz' name component.
