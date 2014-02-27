@@ -18,7 +18,6 @@ module VagrantPlugins
                         if env[:result]
                             b2.use CheckAccessible
                             b2.use SnapshotTake
-                            b2.use WaitForCommunicator, [:restoring, :running]
                         else
                             b2.use MessageNotCreated
                         end
