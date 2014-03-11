@@ -1,3 +1,7 @@
+## 0.0.9 (March 11, 2014)
+
+ - Made plugin compatable with Vagrant 1.5 bundler approach
+
 ## 0.0.8 (January 21, 2014)
 
  - Fixed bug in handling of multiple snapshots on both providers.

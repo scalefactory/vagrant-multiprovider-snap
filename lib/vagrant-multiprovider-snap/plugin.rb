@@ -14,11 +14,11 @@ module VagrantSnap
             # Make sure the fusion plugin is installed, then
             # include the fusion providers.
             
-            Vagrant.require_plugin("vagrant-vmware-fusion")
+            require "vagrant-vmware-fusion" 
             require_relative "providers/vmware_fusion/action"
             require_relative "providers/vmware_fusion/driver/base"
 
-        rescue Vagrant::Errors::PluginLoadError => e
+        rescue LoadError => e
 
             # If we can't load the fusion plugin, quietly ignore it
             # I'd like to log an info level message here, but I don't
