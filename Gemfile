@@ -18,7 +18,7 @@ unless ENV.has_key?('VAGRANT_INSTALLER_EMBEDDED_DIR')
 end
 
 group :development do
-    gem "vagrant", :path => '/Users/jtopper/git/vagrant'
+    gem "vagrant", :git => "git://github.com/mitchellh/vagrant.git"
     gem "rake"
 end
 
