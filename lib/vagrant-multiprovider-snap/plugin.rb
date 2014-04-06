@@ -24,10 +24,23 @@ module VagrantSnap
             require_relative "providers/vmware_fusion/driver/base"
 
         rescue LoadError => e
-
             # If we can't load the fusion plugin, quietly ignore it
-
         end
+
+        begin
+
+            # Same again but for the workstation plugin
+
+            require "vagrant-vmware-workstation/action" 
+            require "vagrant-vmware-workstation/driver" 
+
+            require_relative "providers/vmware_workstation/action"
+            require_relative "providers/vmware_workstation/driver/base"
+
+        rescue LoadError => e
+            # If we can't load the workstation plugin, quietly ignore it
+        end
+
 
         name "snap command"
 
