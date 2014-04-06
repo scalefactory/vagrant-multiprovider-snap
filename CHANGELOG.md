@@ -1,3 +1,9 @@
+## 0.0.10 (April 6, 2014)
+
+ - Force autoloading of VMWare module before overriding its methods
+ - Ensure our override class has same superclass as the one we're adding methods to
+ - Ensure Virtualbox boxes are ready after snapshot rollback
+
 ## 0.0.9 (March 11, 2014)
 
  - Made plugin compatable with Vagrant 1.5 bundler approach

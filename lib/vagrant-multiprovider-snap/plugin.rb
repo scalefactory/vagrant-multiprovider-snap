@@ -11,18 +11,21 @@ module VagrantSnap
 
         begin
 
-            # Make sure the fusion plugin is installed, then
-            # include the fusion providers.
+            # Make sure the fusion plugin is installed (explicitly
+            # requiring the classes we're going to extend otherwise
+            # they don't get autloaded in time for us to do so)
             
-            require "vagrant-vmware-fusion" 
+            require "vagrant-vmware-fusion/action" 
+            require "vagrant-vmware-fusion/driver" 
+
+            # ...then include our overrides
+            
             require_relative "providers/vmware_fusion/action"
             require_relative "providers/vmware_fusion/driver/base"
 
         rescue LoadError => e
 
             # If we can't load the fusion plugin, quietly ignore it
-            # I'd like to log an info level message here, but I don't
-            # think I can get at a ui object in this scope.
 
         end
 

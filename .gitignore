@@ -7,3 +7,4 @@ help/*
 license-vagrant-vmware-fusion.lic
 vendor/*
 *.swp
+.ruby-version
