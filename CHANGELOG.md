@@ -1,3 +1,7 @@
+## 0.0.11 (April 28, 2014)
+
+ - Wait for SSH readiness on rolled-back VMWare VMs
+
 ## 0.0.10 (April 6, 2014)
 
  - Force autoloading of VMWare module before overriding its methods

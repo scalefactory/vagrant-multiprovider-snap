@@ -32,6 +32,7 @@ module HashiCorp
                             b2.use Call, HasSnapshot do |env2, b3|
                                 if env2[:result]
                                     b3.use SnapshotRollback
+                                    b3.use WaitForCommunicator, [:restoring, :running]
                                 else
                                     b3.use MessageSnapshotNotCreated
                                 end
