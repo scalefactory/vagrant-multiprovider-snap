@@ -60,9 +60,7 @@ Vagrant install in order to get access to the rgloader libraries.
 ```
 git clone git@github.com:scalefactory/vagrant-multiprovider-snap.git
 cd vagrant-multiprovider-snap
-cp ~/.vagrant.d/license-vagrant-vmware-fusion.lic .
 bundle install
-bundle install --deployment
 ```
 
 You should now find that ```bundle exec vagrant status``` returns correctly,
