@@ -16,7 +16,7 @@ module HashiCorp
 
                     # Snapshot rollback involves powering off and on the VM
                     #  so we need to find the gui state
-                    boot_mode = env[:machine].provider_config.gui ? "gui" : "headless"
+                    boot_mode = env[:machine].provider_config.gui ? "gui" : "nogui"
 
                     env[:machine].provider.driver.snapshot_rollback(boot_mode)
 
