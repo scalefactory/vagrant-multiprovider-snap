@@ -6,23 +6,23 @@ module HashiCorp
 
             class Fusion
 
-                def snapshot_take
-                    vmrun("snapshot", "#{vmx_path}", "vagrant-snap-#{Time.now.to_i}")
+                def snapshot_take(name)
+                    vmrun("snapshot", "#{vmx_path}", name || "vagrant-snap-#{Time.now.to_i}")
                 end
 
-                def snapshot_rollback(bootmode)
-                   vmrun("revertToSnapshot", "#{vmx_path}", snapshot_list.last)
-                   start
+                def snapshot_rollback(bootmode, name)
+                    vmrun("revertToSnapshot", "#{vmx_path}", name || snapshot_list.last)
+                    start
                 end
 
                 def snapshot_list
                     snapshots = []
                     vmrun("listSnapshots", "#{vmx_path}").stdout.split("\n").each do |line|
-                        if line =~ /^vagrant-snap-/
+                        if line !~ /Total snapshot/
                             snapshots << line
                         end
                     end
-                    snapshots.sort
+                    snapshots
                 end
 
                 def has_snapshot?

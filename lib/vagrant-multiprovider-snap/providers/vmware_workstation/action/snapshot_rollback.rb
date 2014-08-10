@@ -18,7 +18,7 @@ module HashiCorp
                     #  so we need to find the gui state
                     boot_mode = env[:machine].provider_config.gui ? "gui" : "headless"
 
-                    env[:machine].provider.driver.snapshot_rollback(boot_mode)
+                    env[:machine].provider.driver.snapshot_rollback(boot_mode,env[:snap_name])
 
                     @app.call(env)
 

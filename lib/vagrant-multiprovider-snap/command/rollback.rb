@@ -10,10 +10,17 @@ module VagrantSnap
             def execute
 
                 options = {}
+                options[:snap_name] = nil
 
                 opts = OptionParser.new do |o|
-                    o.banner    = "Usage: vagrant snap rollback [vm-name]"
+
+                    o.banner    = "Usage: vagrant snap rollback [vm-name] [--name=<snapname>]"
                     o.separator ""
+
+                    o.on("--name SNAPNAME", "Roll back to the named snapshot (defaults to last taken)") do |n|
+                        options[:snap_name] = n
+                    end
+
                 end
 
                 argv = parse_options(opts)
@@ -21,7 +28,7 @@ module VagrantSnap
 
                 with_target_vms(argv) do |vm|
 
-                    vm.action(:snapshot_rollback)
+                    vm.action(:snapshot_rollback, :snap_name => options[:snap_name])
 
                 end
 
