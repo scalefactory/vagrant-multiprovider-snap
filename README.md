@@ -36,16 +36,20 @@ Typical usage:
   * List snapshots
     ```vagrant snap list [vm]```
 
+  * Take a custom-named snapshot
+    ```vagrant snap take [vm] --name=snap01```
+
+  * Roll back to a named snapshot
+    ```vagrant snap rollback [vm] --name=snap01```
+
 Limitations
 -----------
 
 It's currently not possible to do any of the following:
 
- * Give a custom snapshot name
- * Roll back to a specific named snapshot
  * Disable snapshotting
 
-My own requirements don't include these features, but I could be tempted to
+My own requirements don't include this feature, but I could be tempted to
 add them if anyone would find them useful.
 
 
@@ -80,8 +84,13 @@ vagrant-multiprovider-snap is licensed under the MIT license.
 Thanks
 ------
 
+vagrant-multiprovider-snap was written, and is maintained by Jon Topper of [The Scale Factory](www.scalefactory.com)
+
 Many thanks to the following people for contributing to vagrant-multiprovider-snap:
 
  - Reid Vandewiele
  - James Sweeny
  - Steven De Coeyer
+ - Andrew Stangl
+ - Stefan Scherer
+

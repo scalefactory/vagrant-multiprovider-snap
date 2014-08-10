@@ -1,6 +1,7 @@
 ## 0.0.12 (August 10, 2014)
 
  - Support named snapshots and arbitrary rollback
+ - Ensure GUI-enabled VMWare VMs roll back with the GUI active
 
 ## 0.0.11 (April 28, 2014)
 
