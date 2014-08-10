@@ -25,22 +25,25 @@ vagrant plugin install vagrant-multiprovider-snap
 Usage
 -----
 
-Typical usage:
+Take a new snapshot:
 
-  * Take a new snapshot
-    ```vagrant snap take [vm]```
+    vagrant snap take [vm]
 
-  * Roll back to the last snapshot
-    ```vagrant snap rollback [vm]```
+Roll back to the last snapshot:
 
-  * List snapshots
-    ```vagrant snap list [vm]```
+    vagrant snap rollback [vm]
 
-  * Take a custom-named snapshot
-    ```vagrant snap take [vm] --name=snap01```
+List snapshots:
 
-  * Roll back to a named snapshot
-    ```vagrant snap rollback [vm] --name=snap01```
+    vagrant snap list [vm]
+
+Take a custom-named snapshot:
+
+    vagrant snap take [vm] --name=snap01
+
+Roll back to a named snapshot:
+
+    vagrant snap rollback [vm] --name=snap01
 
 Limitations
 -----------
@@ -84,7 +87,7 @@ vagrant-multiprovider-snap is licensed under the MIT license.
 Thanks
 ------
 
-vagrant-multiprovider-snap was written, and is maintained by Jon Topper of [The Scale Factory](www.scalefactory.com)
+vagrant-multiprovider-snap was written, and is maintained by Jon Topper of [The Scale Factory](http://www.scalefactory.com/)
 
 Many thanks to the following people for contributing to vagrant-multiprovider-snap:
 
