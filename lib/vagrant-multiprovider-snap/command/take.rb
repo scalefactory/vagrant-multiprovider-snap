@@ -10,10 +10,17 @@ module VagrantSnap
             def execute
 
                 options = {}
+                options[:snap_name] = nil
 
                 opts = OptionParser.new do |o|
-                    o.banner    = "Usage: vagrant snap take [vm-name]"
+
+                    o.banner    = "Usage: vagrant snap take [vm-name] [--name=<snapname>]"
                     o.separator ""
+
+                    o.on("--name SNAPNAME", "Use the given name for this snapshot") do |n|
+                        options[:snap_name] = n
+                    end
+
                 end
 
                 argv = parse_options(opts)
@@ -21,7 +28,7 @@ module VagrantSnap
 
                 with_target_vms(argv) do |vm|
 
-                    vm.action(:snapshot_take)
+                    vm.action(:snapshot_take, :snap_name => options[:snap_name])
 
                 end
 
