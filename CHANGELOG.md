@@ -1,3 +1,7 @@
+## 0.0.12 (August 10, 2014)
+
+ - Support named snapshots and arbitrary rollback
+
 ## 0.0.11 (April 28, 2014)
 
  - Wait for SSH readiness on rolled-back VMWare VMs
