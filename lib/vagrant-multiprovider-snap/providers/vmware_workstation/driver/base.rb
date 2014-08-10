@@ -12,7 +12,7 @@ module HashiCorp
 
                 def snapshot_rollback(bootmode, name)
                    vmrun("revertToSnapshot", "#{vmx_path}", name || snapshot_list.last)
-                   start
+                   vmrun("start", "#{vmx_path}", bootmode)
                 end
 
                 def snapshot_list
