@@ -19,7 +19,7 @@ module HashiCorp
                     # bool, not a string, so setting this to "gui" or "nogui" will therefore always start
                     # in gui mode. Setting this to a bool instead
 
-                    boot_mode = env[:machine].provider_config.gui ? true : false
+                    boot_mode = env[:machine].provider_config.gui
 
                     env[:machine].provider.driver.snapshot_rollback(boot_mode, env[:snap_name])
 
