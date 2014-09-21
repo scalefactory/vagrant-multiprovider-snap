@@ -30,7 +30,13 @@ module HashiCorp
                     b.use CheckVMware
                     b.use Call, Created do |env, b2|
                         if env[:result]
-                            b2.use SnapshotDelete
+                            b2.use Call, HasSnapshot do |env2, b3|
+                                if env2[:result]
+                                    b3.use SnapshotDelete
+                                else
+                                    b3.use MessageSnapshotNotDeleted
+                                end
+                            end
                         else
                             b2.use MessageNotCreated
                         end
