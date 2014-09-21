@@ -28,7 +28,21 @@ module VagrantSnap
 
                 with_target_vms(argv) do |vm|
 
-                    vm.action(:snapshot_rollback, :snap_name => options[:snap_name])
+                    unless options[:snap_name].nil?
+
+                        snaps = vm.provider.driver.snapshot_list
+
+                        if snaps.include? /#{options[:snap_name]}/
+                            vm.action(:snapshot_rollback, :snap_name => options[:snap_name])
+                        else
+                            @env.ui.info(I18n.t("vagrant_snap.commands.rollback.output",
+                                                :snapshot => options[:snap_name]),
+                                        :prefix => false)
+                        end
+
+                    else
+                        vm.action(:snapshot_rollback, :snap_name => options[:snap_name])
+                    end
 
                 end
 
