@@ -29,8 +29,8 @@ module HashiCorp
                     snapshots
                 end
 
-                def has_snapshot?
-                    snapshot_list.length > 0
+                def has_snapshot?(name)
+                    return true if snapshot_list.include? "#{name}"
                 end
 
             end
