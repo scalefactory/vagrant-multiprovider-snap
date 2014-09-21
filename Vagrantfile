@@ -10,4 +10,8 @@ Vagrant.configure("2") do |config|
         override.vm.box_url = "http://files.vagrantup.com/precise64_vmware_fusion.box"
     end
 
+    config.vm.provider :hyperv do |hyperv,override|
+        override.vm.box = "hashicorp/precise64"
+    end
+
 end
