@@ -11,7 +11,7 @@ module VagrantPlugins
                 end
 
                 def snapshot_delete(name)
-                    execute("snapshot", @uuid, "delete", name || "vagrant-snap-#{Time.now.to_i}")
+                    execute("snapshot", @uuid, "delete", name)
                 end
 
                 def snapshot_rollback(bootmode, name)
