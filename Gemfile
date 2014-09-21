@@ -4,10 +4,12 @@ source "http://gems.hashicorp.com"
 
 require 'fileutils'
 
-embedded_locations = %w{/Applications/Vagrant/embedded /opt/vagrant/embedded}
+embedded_locations = %w{/Applications/Vagrant/embedded /opt/vagrant/embedded C:\\HashiCorp\Vagrant\embedded}
 
 embedded_locations.each do |p|
-    ENV["VAGRANT_INSTALLER_EMBEDDED_DIR"] = p if File.directory?(p)
+    if File.directory?(p)
+        ENV["VAGRANT_INSTALLER_EMBEDDED_DIR"] = p
+    end
 end
 
 unless ENV.has_key?('VAGRANT_INSTALLER_EMBEDDED_DIR')
@@ -55,7 +57,10 @@ group :development do
 
 end
 
-group :plugins do
+group :vmware do
     gem "vagrant-vmware-fusion"
+end
+
+group :plugins do
     gem "vagrant-multiprovider-snap", path: "."
 end
