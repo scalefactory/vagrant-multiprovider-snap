@@ -15,6 +15,9 @@ en:
         snapshot_rollback:
           rolling_back: |-
             Rolling back to previous snapshot
+        snapshot_delete:
+          deleting: |-
+            Deleting snapshot
         snapshot_not_created: |-
             Snapshot not created for this VM
 
