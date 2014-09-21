@@ -8,7 +8,7 @@ module VagrantPlugins
                 execute_snap("snapshot_vm.ps1", { VmId: vm_id, SnapName: (name || "vagrant-snap-#{Time.now.to_i}") } )
             end
 
-            def snapshot_rollback(bootmode, name)
+            def snapshot_rollback(name)
                 execute_snap("rollback_vm.ps1", { VmId: vm_id,  SnapName: (name || snapshot_list.last) } )
             end
 
