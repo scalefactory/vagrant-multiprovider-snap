@@ -32,7 +32,7 @@ module VagrantSnap
 
                         snaps = vm.provider.driver.snapshot_list
 
-                        if snaps.include? /#{options[:snap_name]}/
+                        if snaps.include? "#{options[:snap_name]}"
                             vm.action(:snapshot_rollback, :snap_name => options[:snap_name])
                         else
                             @env.ui.info(I18n.t("vagrant_snap.commands.rollback.output",
