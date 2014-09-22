@@ -39,15 +39,7 @@ module VagrantSnap
 
                 with_target_vms(argv) do |vm|
 
-                    snaps = vm.provider.driver.snapshot_list
-
-                    if snaps.include? "#{options[:snap_name]}"
-                        vm.action(:snapshot_delete, :snap_name => options[:snap_name])
-                    else
-                        @env.ui.info(I18n.t("vagrant_snap.commands.delete.output",
-                                            :snapshot => options[:snap_name]),
-                                    :prefix => false)
-                    end
+                    vm.action(:snapshot_delete, :snap_name => options[:snap_name])
 
                 end
 
