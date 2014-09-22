@@ -6,16 +6,6 @@ en:
           Current available snapshots by created VM:
 
           %{snapshots}
-      delete:
-        output: |-
-          Snapshot does not exist:
-
-          %{snapshot}
-      rollback:
-        output: |-
-          Snapshot does not exist:
-
-          %{snapshot}
 
     actions:
       vm:
@@ -24,12 +14,19 @@ en:
             Taking snapshot.
         snapshot_rollback:
           rolling_back: |-
-            Rolling back to previous snapshot
+            Rolling back to snapshot - %{snapshot}
+          not_exist: |-
+            Snapshot - %{snapshot} - does not exist
         snapshot_delete:
           deleting: |-
-            Deleting snapshot
-        snapshot_not_created: |-
-          Snapshot not created for this VM
+            Deleting snapshot - %{snapshot}
+          not_exist: |-
+            Snapshot - %{snapshot} - does not exist
+        snapshot_not_created:
+          not_created: |-
+            Snapshot not created for this VM
+          not_exist: |-
+            Snapshot - %{snapshot} - does not exist
         snapshot_not_deleted: |-
           Snapshot not deleted for this VM
 
