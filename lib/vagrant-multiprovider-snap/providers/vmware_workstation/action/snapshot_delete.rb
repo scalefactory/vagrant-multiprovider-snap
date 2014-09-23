@@ -12,7 +12,11 @@ module HashiCorp
 
                 def call(env)
 
-                    env[:ui].info I18n.t("vagrant_snap.actions.vm.snapshot_delete.deleting")
+                    env[:ui].info(I18n.t("vagrant_snap.actions.vm.snapshot_delete.deleting",
+                        :snapshot => env[:snap_name]),
+                        :prefix => false
+                    )
+
                     env[:machine].provider.driver.snapshot_delete(env[:snap_name])
 
                     @app.call(env)

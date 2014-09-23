@@ -12,7 +12,10 @@ module VagrantPlugins
 
                 def call(env)
 
-                    env[:ui].info I18n.t("vagrant_snap.actions.vm.snapshot_not_deleted")
+                    env[:ui].info(I18n.t("vagrant_snap.actions.vm.snapshot_not_deleted.not_deleted",
+                        :snapshot => env[:snap_name]),
+                        :prefix => false
+                    )
 
                     @app.call(env)
 

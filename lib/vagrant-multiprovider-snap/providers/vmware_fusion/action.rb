@@ -11,6 +11,7 @@ module HashiCorp
             autoload :SnapshotDelete,            File.expand_path("../action/snapshot_delete.rb", __FILE__)
             autoload :HasSnapshot,               File.expand_path("../action/has_snapshot.rb", __FILE__)
             autoload :MessageSnapshotNotCreated, File.expand_path("../action/message_snapshot_not_created.rb", __FILE__)
+            autoload :MessageSnapshotNotDeleted, File.expand_path("../action/message_snapshot_not_deleted.rb", __FILE__)
 
             def self.action_snapshot_take
                 Vagrant::Action::Builder.new.tap do |b|

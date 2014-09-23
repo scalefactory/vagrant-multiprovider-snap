@@ -12,6 +12,8 @@ en:
         snapshot_take:
           taking: |-
             Taking snapshot.
+          taking_named: |-
+            Taking snapshot - %{snapshot}
         snapshot_rollback:
           rolling_back: |-
             Rolling back to snapshot - %{snapshot}
@@ -27,6 +29,7 @@ en:
             Snapshot not created for this VM
           not_exist: |-
             Snapshot - %{snapshot} - does not exist
-        snapshot_not_deleted: |-
-          Snapshot not deleted for this VM
+        snapshot_not_deleted:
+          not_deleted: |-
+            Snapshot - %{snapshot} - not deleted for this VM
 
