@@ -35,9 +35,13 @@ module VagrantPlugins
                             b2.use Call, HasSnapshot do |env2, b3|
                                 if env2[:result]
                                     b3.use CheckAccessible
-                                    b3.use SnapshotDelete
+                                    b3.use Call, SnapshotDelete do |env3,b4|
+                                        unless env3[:result]
+                                            b4.use MessageSnapshotNotDeleted
+                                        end
+                                    end
                                 else
-                                    b3.use MessageSnapshotNotDeleted
+                                    b3.use MessageSnapshotNotCreated
                                 end
                             end
                         else

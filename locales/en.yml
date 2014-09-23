@@ -31,5 +31,4 @@ en:
             Snapshot - %{snapshot} - does not exist
         snapshot_not_deleted:
           not_deleted: |-
-            Snapshot - %{snapshot} - not deleted for this VM
-
+            Could not delete snapshot - %{snapshot} ...

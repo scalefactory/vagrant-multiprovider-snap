@@ -17,7 +17,7 @@ module HashiCorp
                         :prefix => false
                     )
 
-                    env[:machine].provider.driver.snapshot_delete(env[:snap_name])
+                    env[:result] = env[:machine].provider.driver.snapshot_delete(env[:snap_name])
 
                     @app.call(env)
 
