@@ -17,7 +17,6 @@ module HashiCorp
                     else
                         env[:ui].info(I18n.t("vagrant_snap.actions.vm.snapshot_not_created.named_not_exist",
                             :snapshot => env[:snap_name]),
-                            :prefix => false
                         )
                     end
 

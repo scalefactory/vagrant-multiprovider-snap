@@ -25,7 +25,6 @@ module HashiCorp
                     else
                         env[:ui].info(I18n.t("vagrant_snap.actions.vm.snapshot_rollback.rolling_back_named",
                             :snapshot => env[:snap_name]),
-                            :prefix => false
                         )
                     end
 
