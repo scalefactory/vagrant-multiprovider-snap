@@ -24,13 +24,11 @@ module VagrantSnap
                 end
 
                 begin
+
                     argv = parse_options(opts)
                     return if !argv
-                    if options[:snap_name].nil?
-                        puts "Missing option: <snapname>"
-                        puts opts
-                        return false
-                    end
+                    raise OptionParser::MissingArgument if options[:snap_name].nil?
+
                 rescue OptionParser::InvalidOption, OptionParser::MissingArgument
                     puts $!.to_s
                     puts opts
