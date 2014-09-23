@@ -13,10 +13,12 @@ module HashiCorp
                 def call(env)
 
                     if env[:snap_name].nil?
-                        env[:snap_name] = env[:machine].provider.driver.snapshot_list.last
+                        snap_name = env[:machine].provider.driver.snapshot_list.last
+                    else
+                        snap_name = env[:snap_name]
                     end
 
-                    env[:result] = env[:machine].provider.driver.has_snapshot?(env[:snap_name])
+                    env[:result] = env[:machine].provider.driver.has_snapshot?(snap_name)
 
                     @app.call(env)
 
