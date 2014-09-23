@@ -12,7 +12,7 @@ module HashiCorp
 
                 def call(env)
 
-                    env[:result] = env[:machine].provider.driver.has_snapshot?
+                    env[:result] = env[:machine].provider.driver.has_snapshot?(env[:snap_name])
 
                     @app.call(env)
 
