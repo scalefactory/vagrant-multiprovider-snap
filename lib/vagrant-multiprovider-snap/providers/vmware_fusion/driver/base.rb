@@ -10,9 +10,13 @@ module HashiCorp
                     vmrun("snapshot", "#{vmx_path}", name || "vagrant-snap-#{Time.now.to_i}")
                 end
 
+                def snapshot_delete(name)
+                    vmrun("deleteSnapshot", "#{vmx_path}", name)
+                end
+
                 def snapshot_rollback(bootmode, name)
-                    vmrun("revertToSnapshot", "#{vmx_path}", name || snapshot_list.last)
-                    start(bootmode)
+                   vmrun("revertToSnapshot", "#{vmx_path}", name || snapshot_list.last)
+                   start(bootmode)
                 end
 
                 def snapshot_list
@@ -25,8 +29,12 @@ module HashiCorp
                     snapshots
                 end
 
-                def has_snapshot?
-                    snapshot_list.length > 0
+                def has_snapshot?(name=nil)
+                    if name.nil?
+                        return true unless snapshot_list.empty?
+                    else
+                        return true if snapshot_list.include? "#{name}"
+                    end
                 end
 
             end

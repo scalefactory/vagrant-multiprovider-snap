@@ -10,6 +10,10 @@ module VagrantPlugins
                     execute("snapshot", @uuid, "take", name || "vagrant-snap-#{Time.now.to_i}", "--pause")
                 end
 
+                def snapshot_delete(name)
+                    execute("snapshot", @uuid, "delete", name)
+                end
+
                 def snapshot_rollback(bootmode, name)
                     # don't try to power off if we're already off
                     unless [:poweroff, :aborted].include?(read_state)
@@ -31,8 +35,12 @@ module VagrantPlugins
                     snapshots
                 end
 
-                def has_snapshot?
-                    snapshot_list.length > 0
+                def has_snapshot?(name)
+                    if name.nil?
+                        return true unless snapshot_list.empty?
+                    else
+                        return true if snapshot_list.include? "#{name}"
+                    end
                 end
 
             end

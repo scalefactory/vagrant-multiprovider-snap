@@ -19,6 +19,11 @@ module VagrantSnap
                     Take
                 end
 
+                @subcommands.register(:delete) do
+                    require_relative "delete"
+                    Delete
+                end
+
                 @subcommands.register(:rollback) do
                     require_relative "rollback"
                     Rollback
