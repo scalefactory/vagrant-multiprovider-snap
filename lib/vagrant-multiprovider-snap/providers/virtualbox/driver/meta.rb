@@ -7,6 +7,7 @@ module VagrantPlugins
             class Meta
 
                 def_delegators :@driver, :snapshot_take,
+                        :snapshot_delete,
                         :snapshot_rollback,
                         :snapshot_list,
                         :has_snapshot?

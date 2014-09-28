@@ -4,7 +4,7 @@ module VagrantPlugins
 
         module Action
 
-            class HasSnapshot
+            class MessageSnapshotNotDeleted
 
                 def initialize(app, env)
                     @app = app
@@ -12,11 +12,9 @@ module VagrantPlugins
 
                 def call(env)
 
-                    if env[:snap_name].nil?
-                        env[:snap_name] = env[:machine].provider.driver.snapshot_list.last
-                    end
-
-                    env[:result] = env[:machine].provider.driver.has_snapshot?(env[:snap_name])
+                    env[:ui].info(I18n.t("vagrant_snap.actions.vm.snapshot_not_deleted.not_deleted",
+                        :snapshot => env[:snap_name]),
+                    )
 
                     @app.call(env)
 

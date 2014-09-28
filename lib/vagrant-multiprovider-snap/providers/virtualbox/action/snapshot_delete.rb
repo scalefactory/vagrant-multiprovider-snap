@@ -4,7 +4,7 @@ module VagrantPlugins
 
         module Action
 
-            class HasSnapshot
+            class SnapshotDelete
 
                 def initialize(app, env)
                     @app = app
@@ -12,11 +12,11 @@ module VagrantPlugins
 
                 def call(env)
 
-                    if env[:snap_name].nil?
-                        env[:snap_name] = env[:machine].provider.driver.snapshot_list.last
-                    end
+                    env[:ui].info(I18n.t("vagrant_snap.actions.vm.snapshot_delete.deleting",
+                        :snapshot => env[:snap_name]),
+                    )
 
-                    env[:result] = env[:machine].provider.driver.has_snapshot?(env[:snap_name])
+                    env[:result] = env[:machine].provider.driver.snapshot_delete(env[:snap_name])
 
                     @app.call(env)
 
