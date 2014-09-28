@@ -57,10 +57,11 @@ group :development do
 
 end
 
-group :vmware do
-    gem "vagrant-vmware-fusion"
-end
 
 group :plugins do
     gem "vagrant-multiprovider-snap", path: "."
+
+    if ENV['VAGRANT_DEFAULT_PROVIDER'] == 'vmware_fusion'
+        gem "vagrant-vmware-fusion"
+    end
 end
