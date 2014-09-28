@@ -10,6 +10,7 @@ running Vagrant boxes.  It currently supports the following providers:
  * VirtualBox
  * VMWare Fusion (via the commercial VMWare plugin)
  * VMWare Workstation (via the commercial VMWare plugin)
+ * Hyper-V
 
 
 Installation
@@ -44,6 +45,10 @@ Take a custom-named snapshot:
 Roll back to a named snapshot:
 
     vagrant snap rollback [vm] --name=snap01
+
+Delete a snapshot
+
+    vagrant snap delete [vm] --name=snap01
 
 Limitations
 -----------

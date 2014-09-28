@@ -1,3 +1,9 @@
+## 0.0.13 (September 28, 2014)
+
+ - Support for Snapshot deletion
+ - Fix bug causing VMWare Fusion VMs to always open GUI on rollback
+ - Support for Hyper-V provider 
+
 ## 0.0.12 (August 10, 2014)
 
  - Support named snapshots and arbitrary rollback
