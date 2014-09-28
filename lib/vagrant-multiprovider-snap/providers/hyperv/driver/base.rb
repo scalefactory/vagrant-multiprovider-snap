@@ -17,12 +17,16 @@ module VagrantPlugins
 		snaps.map { |s| s['Name'] }
             end
 
-            def snapshot_delete
-                snaps = execute_snap("snapshot_delete.ps1", {VmID: vm_id, SnapName: name})
+            def snapshot_delete(name)
+                execute_snap("snapshot_delete.ps1", {VmID: vm_id, SnapName: name})
             end
 
-            def has_snapshot?
-                snapshot_list.length > 0
+            def has_snapshot?(name=nil)
+		if name.nil?
+		    snapshot_list.length > 0
+		else
+                    snapshot_list.include?(name)
+		end
             end
 
             protected

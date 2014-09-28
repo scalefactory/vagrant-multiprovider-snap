@@ -1,4 +1,4 @@
-module HashiCorp
+module VagrantPlugins
 
     module HyperV
 
