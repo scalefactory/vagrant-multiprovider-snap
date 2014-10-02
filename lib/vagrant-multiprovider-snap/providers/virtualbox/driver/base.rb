@@ -35,7 +35,7 @@ module VagrantPlugins
                     snapshots
                 end
 
-                def has_snapshot?(name)
+                def has_snapshot?(name=nil)
                     if name.nil?
                         return true unless snapshot_list.empty?
                     else
