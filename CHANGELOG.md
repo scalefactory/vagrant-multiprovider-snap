@@ -1,3 +1,7 @@
+## 0.0.14 (October 9, 2014)
+
+ - Fix a bug affecting vagrant-cucumber.
+
 ## 0.0.13 (September 28, 2014)
 
  - Support for Snapshot deletion
