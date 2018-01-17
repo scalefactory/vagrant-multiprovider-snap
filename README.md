@@ -1,7 +1,7 @@
 * This project is no longer actively maintained *
 
-
-Vagrant Multi-Provider Snap ==========================
+Vagrant Multi-Provider Snap
+===========================
 
 Description
 -----------
