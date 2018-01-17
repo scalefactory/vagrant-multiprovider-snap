@@ -12,6 +12,23 @@ module VagrantSnap
 	require_relative "providers/hyperv/action"
 	require_relative "providers/hyperv/driver/base"
 
+        $stderr.puts <<-DEPRECATE
+
+! The vagrant-multiprovider-snap plugin is deprecated, as a common snapshot
+! interface was made available in vagrant core from Vagrant 1.8 onwards.
+! The plugin is no longer maintained and may stop working in future Vagrant
+! releases. 
+!
+! Use the "vagrant snapshot" commands for your snapshotting needs.
+!
+! For details, see
+! https://github.com/scalefactory/vagrant-multiprovider-snap/issues/21
+!
+! To remove this message, run:
+! $ vagrant plugin uninstall vagrant-multiprovider-snap
+
+        DEPRECATE
+
         begin
 
             # Make sure the fusion plugin is installed (explicitly
