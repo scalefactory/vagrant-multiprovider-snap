@@ -1,4 +1,4 @@
-ruby '2.0.0'
+ruby '2.3.4'
 source "http://rubygems.org"
 source "http://gems.hashicorp.com"
 
@@ -27,7 +27,7 @@ group :development do
     # gem dependency because we expect to be installed within the
     # Vagrant environment itself using `vagrant plugin`.
 
-    gem "vagrant", :git => "git://github.com/mitchellh/vagrant.git"
+    gem "vagrant", :git => "https://github.com/mitchellh/vagrant.git"
     gem "rake"
 
     if ENV['VAGRANT_DEFAULT_PROVIDER'] == 'vmware_fusion'
